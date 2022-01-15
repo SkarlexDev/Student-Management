@@ -1,0 +1,26 @@
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark bg-black">
+    
+    <ul class="px-3 nav nav-pills nav-fill">
+        <li class="nav-item">
+            <a routerLink="students" routerLinkActive="active" class="nav-link">Students List</a>
+
+        </li>
+        <li class="nav-item">
+            <a routerLink="create-student" routerLinkActive="active" class="nav-link">Add Student</a>
+
+        </li>
+    </ul>
+
+</nav>
+<br>
+<h1 class="text-center">{{title}}</h1>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+<footer class="footer">
+    <div class="container">
+        <span>Demo App</span>
+    </div>
+
+</footer>
