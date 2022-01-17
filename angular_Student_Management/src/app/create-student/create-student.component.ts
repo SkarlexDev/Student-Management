@@ -14,20 +14,24 @@ export class CreateStudentComponent implements OnInit {
   constructor(private studentService: StudentService,
     private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  saveStudent(){
-    this.studentService.createStudent(this.student).subscribe(data=>{
-      this.redirectToStudentList();
-    },
-    error => console.log(error));
+  saveStudent() {
+    this.studentService.createStudent(this.student).subscribe({
+      next: () => {
+        this.redirectToStudentList();
+      },
+      error: error => {
+        console.error(error);
+      }
+    });
   }
 
-  redirectToStudentList(){
+  redirectToStudentList() {
     this.router.navigate(['/students']);
   }
 
-  onSubmit(){
+  onSubmit() {
     this.saveStudent();
   }
 }
